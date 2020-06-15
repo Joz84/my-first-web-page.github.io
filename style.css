@@ -2,7 +2,7 @@ body {
   background: #ee9ca7;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: arial;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 h1 {
@@ -34,7 +34,7 @@ p, ul, ol {
 .cadre {
   background: #E2F3DC;
   border: 3px solid #C1E6B6;
-  /*margin: 100px;*/
+/*  margin: 100px;*/
   padding: 30px 70px;
   border-radius: 5px;
   box-shadow: 5px 5px 10px grey;
@@ -44,8 +44,8 @@ p, ul, ol {
   margin: 100px;
 }
 
-.margin-right-30px {
-  margin-right: 30px;
+.margin-right-20px {
+  margin-right: 20px;
 }
 
 .avatar {
@@ -79,52 +79,265 @@ p, ul, ol {
 
 .btn-pink {
   display: inline-block;
+  background: #C86573;
+  padding: 15px;
   margin: 15px;
   border: 2px solid pink;
-  border-radius: 5px;
+  border-radius: 3px;
   color: white;
-  background: #C86573;
-  box-shadow: 5px 5px 10px grey;
-  padding: 15px;
+  font-weight: bold;
   text-decoration: none;
 }
 
 .btn-pink:hover {
-  background: pink;
+  background: red;
 }
 
 .line-transparent {
-  background: grey;
-/*  height: 400px;*/
-  display: flex; /*dispose les enfants les uns à coté des autres*/
+  background: black;
+  color: white;
+  display: flex; /* Permet de mettre les enfants les uns à coté des autres */
   justify-content: space-around;
   align-items: center;
+/*  height: 600px;*/
 }
 
 .line-dark {
   background: #9F3544;
-  height: 10px;
   width: 50%;
+  height: 10px;
 }
 
 .line-medium {
   background: #EE9DA8;
-  height: 10px;
   width: 30%;
+  height: 10px;
 }
 
 .line-light {
   background: #FBE4E7;
-  height: 10px;
   width: 20%;
+  height: 10px;
 }
 
 .display-flex {
   display: flex;
+  justify-content: center;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 
 
+
+
+
+
+
+
+.bar {
+  margin: 0 auto;
+  background: #00163f;
+  width: 400px;
+  height: 34px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 2px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+.bar-line {
+  height: 100%;
+  background: linear-gradient(to right, red, yellow, green);
+  border-radius: 8px;
+}
+.bar-progress {
+  display: block;
+  border: 1px solid #12161d;
+  height: 100%;
+  width: 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 5%,
+      #002450 5%,
+      #002450 10%
+    ),
+    repeating-linear-gradient(
+      -90deg,
+      transparent,
+      transparent 5%,
+      #002450 5%,
+      #002450 10%
+    );
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.09),
+    inset 0 0 0 1px rgba(230, 230, 231, 0.23);
+}
+.bar:hover .bar-progress {
+  -webkit-animation: change 3s forwards;
+  animation: change 3s forwards;
+}
+
+.bar-progress::after {
+  content: attr(data-percent);
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  color: transparent;
+  top: -20px;
+}
+.bar:hover .bar-progress::after {
+  color: white;
+  transition: color 3s linear;
+}
+@-webkit-keyframes change {
+  to {
+    width: 90%;
+  }
+}
+@-keyframes change {
+  to {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+body {
+  overflow-x: hidden;
+}
+
+body {
+  animation: bgDarken 10s linear;
+}
+
+.machine {
+  position: relative;
+  margin-top: 20%;
+  border-top: 5px solid white;
+  border-bottom: 2px solid white;
+  height: 200px;
+  background-color: #aaa;
+  background-size: 15px 15px;
+  background-position: 0 0, 30px 30px;
+  width: 100%;
+}
+.machine .belt-container {
+  position: absolute;
+  left: -1500px;
+  animation: moveBelt 30s infinite linear;
+}
+.machine .belt {
+  position: absolute;
+  top: -10px;
+  height: 5px;
+  width: 100px;
+  background-color: black;
+}
+.machine .belt .cake .layer {
+  border-radius: 5px 5px 0 0;
+}
+.machine .belt .cake .layer-1 {
+  position: relative;
+  top: -25px;
+  left: 12.5px;
+  border-radius: 0;
+  height: 25px;
+  width: 75%;
+}
+.machine .belt .cake .filling {
+  position: relative;
+  top: -50px;
+  left: 12.5px;
+  height: 3px;
+  width: 75%;
+  background-color: white;
+}
+.machine .belt .cake .layer-2 {
+  position: relative;
+  top: -73px;
+  left: 12.5px;
+  height: 20px;
+  width: 75%;
+}
+.machine .belt .cake .topping {
+  position: relative;
+  top: -98px;
+  left: 20px;
+  height: 5px;
+  width: 60%;
+}
+.machine .belt .cake .candle {
+  position: absolute;
+  top: -65px;
+  left: calc(50% - 12.5px);
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  transform: rotate(90deg);
+}
+.machine .belt .cake .candle:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -10px;
+  right: 25px;
+  height: 5px;
+  background-color: orange;
+  box-shadow: 0 0 140px 15px yellow;
+  animation: candleFlicker 3s linear infinite;
+}
+
+@keyframes moveBelt {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -1500px;
+  }
+}
+@keyframes candleFlicker {
+  0% {
+    box-shadow: none;
+  }
+  5% {
+    box-shadow: 0 0 75px 10px yellow;
+  }
+  15% {
+    box-shadow: none;
+  }
+  18% {
+    box-shadow: 0 0 75px 10px yellow;
+  }
+  100% {
+    box-shadow: 0 0 140px 15px yellow;
+  }
+}
 
 
 
